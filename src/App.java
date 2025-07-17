@@ -1,10 +1,13 @@
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import controllers.Graph;
 import controllers.Maze;
 import controllers.MazeSolber;
 import controllers.MazeSolverRecursivo;
+import controllers.MazeSolverRecursivoCompleto;
 import models.Cell;
 import models.Node;
 
@@ -62,14 +65,23 @@ public class App {
         Cell end = new Cell(3, 3);
 
         List<MazeSolber> solvers = Arrays.asList(
-            new MazeSolverRecursivo()
+            new MazeSolverRecursivo(),
+            new MazeSolverRecursivoCompleto()
 
         );
 
-        MazeSolber solver = solvers.get(0);
+       // MazeSolber solver = solvers.get(0);
+        MazeSolber solver1 = solvers.get(1);
 
+        /**
         List<Cell> path = solver.getPath(maze.getMazeP(), start, end);
+        Collections.reverse(path);
         System.out.println(path);
+         */
+        System.out.println("Completo");
+        List<Cell> path1 = solver1.getPath(maze.getMazeP(), start, end);
+        Collections.reverse(path1);
+        System.out.println(path1);
 
         
     }

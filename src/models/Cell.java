@@ -10,7 +10,7 @@ public class Cell {
     }
     @Override
     public String toString() {
-        return "Celda con coordenadas - ("+rol+", "+col+")";
+        return "Cell-("+rol+", "+col+")";
     }
 
     
